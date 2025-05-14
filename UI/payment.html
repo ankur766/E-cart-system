@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Cart - Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cart.html">My Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li class="profile"><a href="profile.html">Welcome <span id="username"></span> <img src="images/profile-icon.png" alt="Profile"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Payment</h1>
+        <div class="payment-methods">
+            <h2>Select Payment Method</h2>
+            <div class="payment-option">
+                <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                <label for="creditCard">Credit Card</label>
+            </div>
+            <div id="creditCardDetails">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" minlength="16" maxlength="16" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardHolder">Card Holder Name:</label>
+                    <input type="text" id="cardHolder" minlength="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" pattern="\d{2}/\d{2}" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" minlength="3" maxlength="3" required>
+                </div>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="upi" name="paymentMethod" value="upi">
+                <label for="upi">UPI</label>
+            </div>
+            <div id="upiDetails" class="hidden">
+                <div class="form-group">
+                    <label for="upiId">UPI ID:</label>
+                    <input type="text" id="upiId" required>
+                </div>
+            </div>
+            <button id="makePayment" class="btn">Make Payment</button>
+            <a href="cart.html" class="btn back-btn">Back to Cart</a>
+        </div>
+        <div id="invoice" class="hidden">
+            <h2>Order Confirmed</h2>
+            <p>Order ID: <span id="orderId"></span></p>
+            <div id="invoiceDetails">
+                <!-- Invoice details will be loaded via JavaScript -->
+            </div>
+            <a href="home.html" class="btn">Continue Shopping</a>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

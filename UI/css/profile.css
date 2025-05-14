@@ -1,0 +1,227 @@
+/* Profile Page Styles */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #212121;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #2874f0;
+    border-radius: 3px;
+}
+
+/* Profile Details Section */
+.profile-details {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    color: #424242;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.profile-details p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-details strong {
+    color: #212121;
+    min-width: 120px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+#updatePassword {
+    background-color: #2874f0;
+    color: white;
+}
+
+#updatePassword:hover {
+    background-color: #1a66e0;
+    box-shadow: 0 4px 8px rgba(40, 116, 240, 0.3);
+}
+
+#signout {
+    background-color: #ffffff;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+#signout:hover {
+    background-color: #ffeeee;
+    box-shadow: 0 4px 8px rgba(255, 68, 68, 0.1);
+}
+
+/* Password Update Form */
+#passwordUpdateForm {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-top: 2rem;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#passwordUpdateForm h2 {
+    font-size: 1.5rem;
+    color: #212121;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#passwordUpdateForm h2::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232874f0"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11V11.99z"/></svg>');
+    background-size: contain;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #424242;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2874f0;
+    box-shadow: 0 0 0 3px rgba(40, 116, 240, 0.2);
+}
+
+#submitPasswordUpdate {
+    background-color: #00C851;
+    color: white;
+}
+
+#submitPasswordUpdate:hover {
+    background-color: #007E33;
+    box-shadow: 0 4px 8px rgba(0, 200, 81, 0.3);
+}
+
+#cancelPasswordUpdate {
+    background-color: #ffffff;
+    color: #616161;
+    border: 1px solid #e0e0e0;
+}
+
+#cancelPasswordUpdate:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+    
+    .profile-details,
+    #passwordUpdateForm {
+        padding: 1.5rem;
+    }
+    
+    .profile-details p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .profile-details strong {
+        min-width: auto;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .profile-details p {
+        font-size: 1rem;
+    }
+    
+    .form-group input {
+        padding: 0.625rem 0.875rem;
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Cart - My Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cart.html">My Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li class="profile"><a href="profile.html">Welcome <span id="username"></span> <img src="images/profile-icon.png" alt="Profile"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>My Cart</h1>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded via JavaScript -->
+        </div>
+        <div class="address-section">
+            <h2>Delivery Address</h2>
+            <p id="customerAddress"></p>
+            <button id="editAddress" class="btn">Edit Address</button>
+        </div>
+        <button id="proceedToPayment" class="btn">Proceed to Payment</button>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
